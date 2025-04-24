@@ -1,16 +1,17 @@
 import re
 
 
-def tokenize(code):
+def Tokenize(code):
     tokens = []
     token_spec = [
         ('NUMBER',  r'\d+'),
-        ('IDENT',   r'[a-zA-KM-Z_][a-zA-Z0-9_]*'),
-        ('ASSIGN',  r':='),
         ('LAMBDA',  r'L'),
+        ('IDENT',   r'[a-zA-Z_][a-zA-Z0-9_]*'),
+        ('ASSIGN',  r':='),
         ('DOT',     r'\.'),
         ('LPAREN',  r'\('),
         ('RPAREN',  r'\)'),
+        ('PLUS',    r'\+'),
         ('SKIP',    r'[ \t]+'),
     ]
     tok_regex = '|'.join(f'(?P<{name}>{regex})' for name, regex in token_spec)
