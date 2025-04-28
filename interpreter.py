@@ -1,15 +1,42 @@
 from parser import Parser
 from tokenizer import Tokenize
 from generator import Generate
+from python_repl import PythonREPL
 
 def interpret(code):
-    out = ''
-    for e in code.split('\n'):
-        tokens = Tokenize(e)
+    repl = PythonREPL()
+    output = ''
+
+    # Split code into lines
+    lines = code.strip().split('\n')
+
+    expr_lines = []  # buffer for expression lines
+
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+
+        if ':=' in line:
+            # Assignment — immediately parse and execute
+            tokens = Tokenize(line)
+            parser = Parser(tokens)
+            ast = parser.parse()
+            py_code = Generate(ast)
+            result = repl.run(py_code)
+            output += result
+        else:
+            # Not assignment — buffer the expression
+            expr_lines.append(line)
+
+    if expr_lines:
+        # If there are any buffered expressions, join them and run at once
+        expr_code = ' '.join(expr_lines)
+        tokens = Tokenize(expr_code)
         parser = Parser(tokens)
         ast = parser.parse()
         py_code = Generate(ast)
-        
-        out +=  py_code + '\n' #modify this part to execute
+        result = repl.run(py_code)
+        output += result
 
-    return out
+    return output
