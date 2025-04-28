@@ -58,6 +58,11 @@ Miterand is a minimal toolkit that parses untyped Lambda Calculus expressions an
    '''
    print(interpret(code))  # >>> 5
    ```
+   
+## Install over PyPI
+   ```bash
+   pip install miterand
+   ```
 
 ## Application & Extensions
 
