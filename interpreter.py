@@ -29,10 +29,9 @@ def interpret(code):
             # Not assignment — buffer the expression
             expr_lines.append(line)
 
-    if expr_lines:
-        # If there are any buffered expressions, join them and run at once
-        expr_code = ' '.join(expr_lines)
-        tokens = Tokenize(expr_code)
+    # Instead of joining expressions into one, interpret each separately
+    for expr_line in expr_lines:
+        tokens = Tokenize(expr_line)
         parser = Parser(tokens)
         ast = parser.parse()
         py_code = Generate(ast)
