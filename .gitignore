@@ -1,1 +1,5 @@
+# IDE files
+.idea
+
+# py cache
 __pycache__
