@@ -1,0 +1,21 @@
+name: Publish Python package
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - run: bash build.sh
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@v1.6.3
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
