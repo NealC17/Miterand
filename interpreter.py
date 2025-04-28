@@ -38,4 +38,5 @@ def interpret(code):
         result = repl.run(py_code)
         output += result
 
+    output = output.replace("> >", ">\n>")
     return output
