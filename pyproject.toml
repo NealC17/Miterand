@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "miterand"
+version = "0.1.0"
+description = "Minimal toolkit that parses untyped Lambda Calculus expressions and compiles them into executable Python code."
+readme = "README.md"
+authors = [ { name = "Haydon Behl" }, { name = "Neal Chandra" } ]
+requires-python = ">=3.7"
+dependencies = []
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]

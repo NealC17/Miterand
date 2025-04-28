@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+pyproject.toml
+src/miterand/__init__.py
+src/miterand/generator.py
+src/miterand/interpreter.py
+src/miterand/parser.py
+src/miterand/python_repl.py
+src/miterand/tokenizer.py
+src/miterand.egg-info/PKG-INFO
+src/miterand.egg-info/SOURCES.txt
+src/miterand.egg-info/dependency_links.txt
+src/miterand.egg-info/top_level.txt

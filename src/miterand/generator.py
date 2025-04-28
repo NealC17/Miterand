@@ -1,4 +1,4 @@
-from parser import Assignment, Lambda, BinaryOp, Variable, Number, Call
+from .parser import Assignment, Lambda, BinaryOp, Variable, Number, Call
 
 
 def Generate(node):
