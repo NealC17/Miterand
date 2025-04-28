@@ -2,6 +2,7 @@ import subprocess
 import sys
 import threading
 
+
 class PythonREPL:
     def __init__(self, python_cmd=None, prompt=">>> "):
         """
@@ -16,7 +17,7 @@ class PythonREPL:
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             text=True,
-            bufsize=1,            # line-buffered
+            bufsize=1,  # line-buffered
         )
         # drain the initial banner up to the first '>>> '
         self._read_until(self.prompt)

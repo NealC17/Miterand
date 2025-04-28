@@ -3,6 +3,7 @@ from tokenizer import Tokenize
 from generator import Generate
 from python_repl import PythonREPL
 
+
 def interpret(code):
     repl = PythonREPL()
     output = ''

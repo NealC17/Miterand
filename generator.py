@@ -1,5 +1,6 @@
 from parser import Assignment, Lambda, BinaryOp, Variable, Number, Call
 
+
 def Generate(node):
     if isinstance(node, Assignment):
         return f"{node.name} = {Generate(node.value)}"

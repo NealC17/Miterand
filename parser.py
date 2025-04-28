@@ -3,10 +3,12 @@ class Assignment:
         self.name = name
         self.value = value
 
+
 class Lambda:
     def __init__(self, param, body):
         self.param = param
         self.body = body
+
 
 class BinaryOp:
     def __init__(self, op, left, right):
@@ -14,18 +16,22 @@ class BinaryOp:
         self.left = left
         self.right = right
 
+
 class Variable:
     def __init__(self, name):
         self.name = name
+
 
 class Number:
     def __init__(self, value):
         self.value = int(value)
 
+
 class Call:
     def __init__(self, func, arg):
         self.func = func
         self.arg = arg
+
 
 class Parser:
     def __init__(self, tokens):
