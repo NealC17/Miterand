@@ -49,7 +49,7 @@ Miterand is a minimal toolkit that parses untyped Lambda Calculus expressions an
    ```
 3. **Use `interpret` in your code**:
    ```python
-   from interpreter import interpret
+   from miterand.interpreter import interpret
 
    code = '''
    add := Lx.Ly.(x + y)
